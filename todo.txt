@@ -1,0 +1,3 @@
+when game loads, get random head of somebody called robert
+click on the robert head like flappy bird
+every time game is loaded, another robert head is loaded instead
