@@ -3,6 +3,7 @@ let hole = document.getElementById("hole");
 let character = document.getElementById("character");
 let jumping = 0;
 let counter = 0;
+let scoreElement = document.getElementById("score");
 
 hole.addEventListener("animationiteration", () => {
     let random = -((Math.random() * 300) + 150);
@@ -19,6 +20,7 @@ setInterval(() => {
     let cTop = -(500 - characterTop);
     if ((characterTop > 480) || ((blockLeft < 20) && (blockLeft > - 50) && ((cTop < holeTop) || (cTop > holeTop + 130)))) {
         console.log(`Game Over. Score: ${counter}`);
+        scoreElement.innerHTML = `Score: ${counter}`;
         character.style.top = 100 + "px";
         counter = 0;
     }
