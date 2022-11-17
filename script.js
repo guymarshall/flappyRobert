@@ -9,6 +9,7 @@ hole.addEventListener("animationiteration", () => {
     let random = -((Math.random() * 300) + 150);
     hole.style.top = random + "px";
     counter++;
+    scoreElement.innerHTML = `Score: ${counter}`;
 });
 setInterval(() => {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -19,10 +20,9 @@ setInterval(() => {
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(500 - characterTop);
     if ((characterTop > 480) || ((blockLeft < 20) && (blockLeft > - 50) && ((cTop < holeTop) || (cTop > holeTop + 130)))) {
-        console.log(`Game Over. Score: ${counter}`);
+        counter = 0;
         scoreElement.innerHTML = `Score: ${counter}`;
         character.style.top = 100 + "px";
-        counter = 0;
     }
 }, 10);
 
